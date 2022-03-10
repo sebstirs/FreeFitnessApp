@@ -1,6 +1,6 @@
 public class FreeFitnessApp {
 
-	class workout {
+	class input {
 		
 		private int sets, reps, targetWeight;
 		
@@ -14,6 +14,12 @@ public class FreeFitnessApp {
 			sets = inputTargetWeight;
 		}
 	
+	}
+	class exercises{
+		
+	}
+	class workouts{
+		
 	}
 	
 	public static void main(String[] args) {
