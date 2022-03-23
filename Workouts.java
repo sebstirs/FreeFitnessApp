@@ -1,19 +1,33 @@
+import java.util.*;
+
 public class Workouts {
-    private final int defaultNumExercise = 1;
-    private final String defaultExerciseName = "Default";
+    //private final int defaultNumExercise = 1;
+    //private final String defaultExerciseName = "Default";
     
     private int numExercies;
-    private String exerciseName;
-    
-    public Workouts(int num, String name){
-        this.numExercies=num;
-        this.exerciseName=name;
+
+    Scanner myScanner = new Scanner(System.in);
+
+    public Workouts(){
+
     }
+    
     public int getNumExercise(){
+        System.out.println("Enter the number exercises in this workout: ");
+        numExercies = myScanner.nextInt();
         return this.numExercies;
     }
-    public String getExerciseName(){
-        return this.exerciseName;
-    }
+    public String[] exerciseList(){
+        String[] myWorkout = {};
+        Excercise myExcercise = new Excercise();
+        for(int i =0; i < numExercies; i++){
+            myExcercise.getSet();
+            myExcercise.getRep();
+            myExcercise.getWeight();
+            myExcercise.getName();
+            myWorkout[i] += myExcercise.returnExercise();
+        }
 
+        return myExcercise.returnExercise();
+    }
 }
