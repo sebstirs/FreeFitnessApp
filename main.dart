@@ -118,7 +118,7 @@ class StartWorkout extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => const PushPullLegs()));
+                            builder: (_) => const ThreeDayHybrid()));
                   })),
           Container(
               padding: const EdgeInsets.all(8),
@@ -132,10 +132,8 @@ class StartWorkout extends StatelessWidget {
                           TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
                   child: const Text('Bro Split'),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const PushPullLegs()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const BroSplit()));
                   })),
           Container(
               padding: const EdgeInsets.all(8),
@@ -152,7 +150,7 @@ class StartWorkout extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => const PushPullLegs()));
+                            builder: (_) => const Calisthenics()));
                   })),
         ],
       ),
@@ -263,6 +261,174 @@ class PushPullLegs extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.red,
         title: const Text('Push Pull Legs'),
+      ),
+      body: Column(
+        children: [
+          Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: const Text('Push')),
+          Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: const Text('Pull')),
+          Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: const Text('Legs'))
+        ],
+      ),
+      drawer: Drawer(
+          child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text('Drawer Header'),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Create Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const CreateWorkout(),
+                    ));
+              }),
+        ],
+      )),
+    );
+  }
+}
+
+class ThreeDayHybrid extends StatelessWidget {
+  const ThreeDayHybrid({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: const Text('Three Day Hybrid'),
+      ),
+      body: Wrap(),
+      drawer: Drawer(
+          child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text('Drawer Header'),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Create Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const CreateWorkout(),
+                    ));
+              }),
+        ],
+      )),
+    );
+  }
+}
+
+class BroSplit extends StatelessWidget {
+  const BroSplit({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: const Text('Bro Split'),
+      ),
+      body: Wrap(),
+      drawer: Drawer(
+          child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text('Drawer Header'),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Create Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const CreateWorkout(),
+                    ));
+              }),
+        ],
+      )),
+    );
+  }
+}
+
+class Calisthenics extends StatelessWidget {
+  const Calisthenics({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: const Text('Calisthenics'),
       ),
       body: Wrap(),
       drawer: Drawer(
