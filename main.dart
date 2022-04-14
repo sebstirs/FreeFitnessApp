@@ -87,25 +87,73 @@ class StartWorkout extends StatelessWidget {
         crossAxisCount: 2,
         children: <Widget>[
           Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Push Pull Legs'),
-            color: Colors.teal[300],
-          ),
+              padding: const EdgeInsets.all(8),
+              color: Colors.red,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.black,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                      textStyle:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+                  child: const Text('Push Pull Legs'),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const PushPullLegs()));
+                  })),
           Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('3 Day Hybrid'),
-            color: Colors.teal[300],
-          ),
+              padding: const EdgeInsets.all(8),
+              color: Colors.red,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.black,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      textStyle:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+                  child: const Text('3 Day Hybrid'),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const PushPullLegs()));
+                  })),
           Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Bro Split'),
-            color: Colors.teal[300],
-          ),
+              padding: const EdgeInsets.all(8),
+              color: Colors.red,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.black,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                      textStyle:
+                          TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
+                  child: const Text('Bro Split'),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const PushPullLegs()));
+                  })),
           Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Calisthenics'),
-            color: Colors.teal[300],
-          ),
+              padding: const EdgeInsets.all(8),
+              color: Colors.red,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.black,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                      textStyle:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                  child: const Text('Calisthenics'),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const PushPullLegs()));
+                  })),
         ],
       ),
       drawer: Drawer(
@@ -158,6 +206,63 @@ class CreateWorkout extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.red,
         title: const Text('Create Workout'),
+      ),
+      body: TextField(
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          hintText: 'Enter new Workout Name',
+        ),
+      ),
+      drawer: Drawer(
+          child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text('Drawer Header'),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Create Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const CreateWorkout(),
+                    ));
+              }),
+        ],
+      )),
+    );
+  }
+}
+
+class PushPullLegs extends StatelessWidget {
+  const PushPullLegs({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: const Text('Push Pull Legs'),
       ),
       body: Wrap(),
       drawer: Drawer(
