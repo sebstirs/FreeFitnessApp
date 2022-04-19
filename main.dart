@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/page/WOOnePage.dart';
-import 'package:myapp/page/WOTwoPage.dart';
-import 'package:myapp/widget/tabbar_widget.dart';
+import 'package:sqflite/sqflite.dart';
+import 'dart:io';
+import 'dart:async';
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -216,7 +219,7 @@ class StartWorkout extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (_) => const CustomWorkoutOne()));
+                                builder: (_) => const WorkoutOne()));
                       })),
               Container(
                   padding: const EdgeInsets.all(8),
@@ -233,7 +236,7 @@ class StartWorkout extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (_) => const CustomWorkoutTwo()));
+                                builder: (_) => const WorkoutOne()));
                       })),
             ],
           ),
@@ -1927,40 +1930,161 @@ class Arms extends StatelessWidget {
   }
 }
 
-class CustomWorkoutOne extends StatelessWidget {
-  const CustomWorkoutOne({Key? key}) : super(key: key);
+class WorkoutOne extends StatefulWidget {
+  const WorkoutOne({Key? key}) : super(key: key);
+
+  @override
+  State<WorkoutOne> createState() => _WorkoutOneState();
+}
+
+class _WorkoutOneState extends State<WorkoutOne> {
+  int? selectedID;
+  final textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.red,
-          title: const Text('Custom Workout One'),
+          title: TextField(
+            controller: textController,
+          ),
         ),
-        body: Stack(children: <Widget>[
-          CustomWorkoutOne(),
-        ]));
+        body: Center(
+            child: FutureBuilder<List<Workout>>(
+                future: DatabaseHelper.instance.getWorkout(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<List<Workout>> snapshot) {
+                  if (!snapshot.hasData) {
+                    return Center(child: Text('Loading...'));
+                  }
+                  return snapshot.data!.isEmpty
+                      ? Center(child: Text('No workouts'))
+                      : ListView(
+                          children: snapshot.data!.map((workout) {
+                          return Center(
+                              child: Card(
+                                  color: selectedID == workout.id
+                                      ? Colors.white70
+                                      : Colors.white,
+                                  child: ListTile(
+                                      title: Text('Workout Name'),
+                                      onTap: () {
+                                        setState(() {
+                                          if (selectedID == null) {
+                                            textController.text = workout.name;
+                                            selectedID = workout.id;
+                                          } else {
+                                            textController.text = '';
+                                            selectedID = null;
+                                          }
+                                        });
+                                      },
+                                      onLongPress: () {
+                                        setState(() {
+                                          DatabaseHelper.instance
+                                              .remove(workout.id!);
+                                        });
+                                      })));
+                        }).toList());
+                })),
+        floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.save),
+            onPressed: () async {
+              selectedID != null
+                  ? await DatabaseHelper.instance.update(
+                      Workout(id: selectedID, name: textController.text),
+                    )
+                  : await DatabaseHelper.instance.add(
+                      Workout(name: textController.text),
+                    );
+              setState(() {
+                textController.clear();
+                selectedID = null;
+              });
+            }),
+      ),
+    );
   }
 }
 
-class CustomWorkoutTwo extends StatelessWidget {
-  const CustomWorkoutTwo({Key? key}) : super(key: key);
+class Workout {
+  final int? id;
+  String name;
+  String? exname;
+  int? set;
+  int? rep;
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.red,
-          title: const Text('Custom Workout Two'),
-        ),
-        body: Container(
-            child: Stack(children: [
-          Center(
-            child: Container(child: Image.asset('assets/Zen.jpg')),
-          ),
-          CustomWorkoutTwo(),
-          Container(),
-          Container(),
-        ])));
+  Workout({this.id, required this.name, this.exname, this.set, this.rep});
+
+  factory Workout.fromMap(Map<String, dynamic> json) => new Workout(
+        id: json['id'],
+        name: json['workoutname'],
+        exname: json['exercisename'],
+        set: json['sets'],
+        rep: json['reps'],
+      );
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'exname': exname,
+      'set': set,
+      'rep': rep,
+    };
+  }
+}
+
+class DatabaseHelper {
+  DatabaseHelper._privateConstructor();
+  static final DatabaseHelper instance = DatabaseHelper._privateConstructor();
+
+  static Database? _database;
+  Future<Database> get database async => _database ??= await _initDatabase();
+
+  Future<Database> _initDatabase() async {
+    Directory documentDirectory = await getApplicationDocumentsDirectory();
+    String path = join(await getDatabasesPath(), 'workout.db');
+    return await openDatabase(
+      path,
+      version: 1,
+      onCreate: _onCreate,
+    );
+  }
+
+  Future _onCreate(Database db, int version) async {
+    await db.execute('''
+CREATE TABLE workout(
+  id INTEGAR PRIMARY KEY,
+  name TEXT
+)
+    ''');
+  }
+
+  Future<List<Workout>> getWorkout() async {
+    Database db = await instance.database;
+    var workout = await db.query('workout', orderBy: 'name');
+    List<Workout> workoutList = workout.isNotEmpty
+        ? workout.map((c) => Workout.fromMap(c)).toList()
+        : [];
+    return workoutList;
+  }
+
+  Future<int> add(Workout workout) async {
+    Database db = await instance.database;
+    return await db.insert('workout', workout.toMap());
+  }
+
+  Future<int> remove(int id) async {
+    Database db = await instance.database;
+    return await db.delete('workout', where: 'id = ?', whereArgs: [id]);
+  }
+
+  Future<int> update(Workout workout) async {
+    Database db = await instance.database;
+    return await db.update('workout', workout.toMap(),
+        where: 'id = ?', whereArgs: [workout.id]);
   }
 }
