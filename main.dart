@@ -3,7 +3,9 @@ import 'package:sqflite/sqflite.dart';
 import 'dart:io';
 import 'dart:async';
 import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
+//import 'package:myapp/WorkoutClass.dart';
+//import 'package:myapp/dbwork.dart';
+//import 'package:path_provider/path_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,75 +40,75 @@ class Home extends StatelessWidget {
         ),
         Center(
             child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(10),
-              height: 50,
-              width: 300,
-              color: Colors.red.withOpacity(.5),
-              child: const Text(
-                'Welcome!',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                    color: Colors.white),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.all(8),
-            ),
-            Container(
-              // padding: const EdgeInsets.all(10),
-              height: 50,
-              width: 300,
-              color: Colors.red.withOpacity(.5),
-              child: TextButton(
-                  onPressed: () => {
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  height: 50,
+                  width: 300,
+                  color: Colors.red.withOpacity(.5),
+                  child: const Text(
+                    'Welcome!',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                        color: Colors.white),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                ),
+                Container(
+                  // padding: const EdgeInsets.all(10),
+                  height: 50,
+                  width: 300,
+                  color: Colors.red.withOpacity(.5),
+                  child: TextButton(
+                      onPressed: () => {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (_) => const StartWorkout(),
                             ))
                       },
-                  child: const Text(
-                    "Start Workout",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25, color: Colors.white),
-                  )),
-            )
-          ],
-        )),
+                      child: const Text(
+                        "Start Workout",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 25, color: Colors.white),
+                      )),
+                )
+              ],
+            )),
       ]),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text('Navigator', style: TextStyle(color: Colors.white)),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text('Navigator', style: TextStyle(color: Colors.white)),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -125,10 +127,10 @@ class StartWorkout extends StatelessWidget {
         child: Stack(children: [
           Center(
               child: Container(
-            child: Image.asset(
-              'assets/pushup.jpg',
-            ),
-          )),
+                child: Image.asset(
+                  'assets/pushup.jpg',
+                ),
+              )),
           GridView.count(
             primary: false,
             padding: const EdgeInsets.all(5),
@@ -142,9 +144,9 @@ class StartWorkout extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           primary: Colors.black.withOpacity(.5),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 50, vertical: 20),
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               fontSize: 30, fontWeight: FontWeight.bold)),
                       child: const Text('Push Pull Legs'),
                       onPressed: () {
@@ -159,9 +161,9 @@ class StartWorkout extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           primary: Colors.black.withOpacity(.5),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 20),
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               fontSize: 30, fontWeight: FontWeight.bold)),
                       child: const Text('3 Day Hybrid'),
                       onPressed: () {
@@ -176,9 +178,9 @@ class StartWorkout extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           primary: Colors.black.withOpacity(.5),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 50, vertical: 20),
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               fontSize: 32, fontWeight: FontWeight.bold)),
                       child: const Text('Bro Split'),
                       onPressed: () {
@@ -193,9 +195,9 @@ class StartWorkout extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           primary: Colors.black.withOpacity(.5),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               fontSize: 25, fontWeight: FontWeight.bold)),
                       child: const Text('Calisthenics'),
                       onPressed: () {
@@ -210,9 +212,9 @@ class StartWorkout extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           primary: Colors.black.withOpacity(.5),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               fontSize: 25, fontWeight: FontWeight.bold)),
                       child: const Text('Create Workout'),
                       onPressed: () {
@@ -227,9 +229,9 @@ class StartWorkout extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           primary: Colors.black.withOpacity(.5),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               fontSize: 25, fontWeight: FontWeight.bold)),
                       child: const Text('Create Workouts'),
                       onPressed: () {
@@ -244,32 +246,32 @@ class StartWorkout extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text('Navigator', style: TextStyle(color: Colors.white)),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text('Navigator', style: TextStyle(color: Colors.white)),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -337,35 +339,35 @@ class PushPullLegs extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -433,35 +435,35 @@ class ThreeDayHybrid extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -561,35 +563,35 @@ class BroSplit extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -609,7 +611,7 @@ class Calisthenics extends StatelessWidget {
           Container(child: Image.asset('assets/squat.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -676,35 +678,35 @@ class Calisthenics extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -724,7 +726,7 @@ class Push extends StatelessWidget {
           Container(child: Image.asset('assets/push.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -788,35 +790,35 @@ class Push extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -836,7 +838,7 @@ class Pull extends StatelessWidget {
           Container(child: Image.asset('assets/Pull.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -852,7 +854,7 @@ class Pull extends StatelessWidget {
                       Container(child: const Text('Deadlift')),
                       Container(child: const Text('Pull Ups')),
                       Container(child: const Text('BB Rows')),
-                      Container(child: const Text('Farmer Carries')),
+                      Container(child: const Text('Farmer Exerciseries')),
                       Container(child: const Text('DB Curls')),
                       Container(child: const Text('Face Pulls')),
                     ],
@@ -903,35 +905,35 @@ class Pull extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -951,7 +953,7 @@ class Legs extends StatelessWidget {
           Container(child: Image.asset('assets/squat.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -1012,35 +1014,35 @@ class Legs extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -1059,7 +1061,7 @@ class DayOne extends StatelessWidget {
           Container(child: Image.asset('assets/squat.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -1123,35 +1125,35 @@ class DayOne extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -1170,7 +1172,7 @@ class DayTwo extends StatelessWidget {
           Container(child: Image.asset('assets/squat.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -1234,35 +1236,35 @@ class DayTwo extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -1281,7 +1283,7 @@ class DayThree extends StatelessWidget {
           Container(child: Image.asset('assets/squat.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -1345,35 +1347,35 @@ class DayThree extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -1392,7 +1394,7 @@ class Chest extends StatelessWidget {
           Container(child: Image.asset('assets/squat.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -1453,35 +1455,35 @@ class Chest extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -1500,7 +1502,7 @@ class Back extends StatelessWidget {
           Container(child: Image.asset('assets/squat.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -1564,35 +1566,35 @@ class Back extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -1611,7 +1613,7 @@ class BroSplitLegs extends StatelessWidget {
           Container(child: Image.asset('assets/squat.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -1675,35 +1677,35 @@ class BroSplitLegs extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -1722,7 +1724,7 @@ class Shoulders extends StatelessWidget {
           Container(child: Image.asset('assets/squat.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -1783,35 +1785,35 @@ class Shoulders extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -1830,7 +1832,7 @@ class Arms extends StatelessWidget {
           Container(child: Image.asset('assets/squat.jpg')),
           Container(
             color: Colors.red,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -1897,35 +1899,35 @@ class Arms extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
-            child: Text(
-              'Navigator',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Home(),
-                    ));
-              }),
-          ListTile(
-              title: const Text('Start Workout'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const StartWorkout(),
-                    ));
-              }),
-        ],
-      )),
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                child: Text(
+                  'Navigator',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        ));
+                  }),
+              ListTile(
+                  title: const Text('Start Workout'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StartWorkout(),
+                        ));
+                  }),
+            ],
+          )),
     );
   }
 }
@@ -1938,153 +1940,444 @@ class WorkoutOne extends StatefulWidget {
 }
 
 class _WorkoutOneState extends State<WorkoutOne> {
-  int? selectedID;
-  final textController = TextEditingController();
+  final dbHelper = DatabaseHelper.instance;
+  List<Exercise>  exercises= [];
+  List<Exercise> exercisesByName = [];
+//controllers used in insert operation UI
+  TextEditingController nameController = TextEditingController();
+  TextEditingController setsController = TextEditingController();
+  TextEditingController repsController = TextEditingController();
+//controllers used in update operation UI
+  TextEditingController idUpdateController = TextEditingController();
+  TextEditingController nameUpdateController = TextEditingController();
+  TextEditingController setsUpdateController = TextEditingController();
+  TextEditingController repsUpdateController = TextEditingController();
+//controllers used in delete operation UI
+  TextEditingController idDeleteController = TextEditingController();
+//controllers used in query operation UI
+  TextEditingController queryController = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  void _showMessageInScaffold(String message){
+    _scaffoldKey.currentState?.showSnackBar(
+        SnackBar(
+          content: Text(message),
+        )
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        key: _scaffoldKey,
         appBar: AppBar(
-          backgroundColor: Colors.red,
-          title: TextField(
-            controller: textController,
+          bottom: const TabBar(
+            tabs: [
+              Tab(
+                text: "Insert",
+              ),
+              Tab(
+                text: "View",
+              ),
+              Tab(
+                text: "Query",
+              ),
+              Tab(
+                text: "Update",
+              ),
+              Tab(
+                text: "Delete",
+              ),
+            ],
           ),
+          title: const Text('Free Fitness App'),
         ),
-        body: Center(
-            child: FutureBuilder<List<Workout>>(
-                future: DatabaseHelper.instance.getWorkout(),
-                builder: (BuildContext context,
-                    AsyncSnapshot<List<Workout>> snapshot) {
-                  if (!snapshot.hasData) {
-                    return Center(child: Text('Loading...'));
-                  }
-                  return snapshot.data!.isEmpty
-                      ? Center(child: Text('No workouts'))
-                      : ListView(
-                          children: snapshot.data!.map((workout) {
-                          return Center(
-                              child: Card(
-                                  color: selectedID == workout.id
-                                      ? Colors.white70
-                                      : Colors.white,
-                                  child: ListTile(
-                                      title: Text('Workout Name'),
-                                      onTap: () {
-                                        setState(() {
-                                          if (selectedID == null) {
-                                            textController.text = workout.name;
-                                            selectedID = workout.id;
-                                          } else {
-                                            textController.text = '';
-                                            selectedID = null;
-                                          }
-                                        });
-                                      },
-                                      onLongPress: () {
-                                        setState(() {
-                                          DatabaseHelper.instance
-                                              .remove(workout.id!);
-                                        });
-                                      })));
-                        }).toList());
-                })),
-        floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.save),
-            onPressed: () async {
-              selectedID != null
-                  ? await DatabaseHelper.instance.update(
-                      Workout(id: selectedID, name: textController.text),
-                    )
-                  : await DatabaseHelper.instance.add(
-                      Workout(name: textController.text),
+        body: TabBarView(
+          children: [
+            Center(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: TextField(
+                      controller: nameController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Exercise Name',
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: TextField(
+                      controller: setsController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Sets',
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: TextField(
+                      controller: repsController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Reps',
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    child: const Text('Insert Exercise Details'),
+                    onPressed: () {
+                      String name = nameController.text;
+                      int sets = int.parse(setsController.text);
+                      int reps=int.parse(repsController.text);
+                      _insert(name, sets,reps);
+                    },
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              child: ListView.builder(
+                padding: const EdgeInsets.all(8),
+                itemCount: exercises.length + 1,
+                itemBuilder: (BuildContext context, int index) {
+                  if (index == exercises.length) {
+                    return ElevatedButton(
+                      child: const Text('Refresh'),
+                      onPressed: () {
+                        setState(() {
+                          _queryAll();
+                        });
+                      },
                     );
-              setState(() {
-                textController.clear();
-                selectedID = null;
-              });
-            }),
+                  }
+                  return Container(
+                    height: 40,
+                    child: Center(
+                      child: Text(
+                        '[${exercises[index].id}] ${exercises[index].name} - ${exercises[index].sets} sets - ${exercises[index].reps} reps',
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Center(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: TextField(
+                      controller: queryController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Exercise Name',
+                      ),
+                      onChanged: (text) {
+                        if (text.length >= 2) {
+                          setState(() {
+                            _query(text);
+                          });
+                        } else {
+                          setState(() {
+                            exercisesByName.clear();
+                          });
+                        }
+                      },
+                    ),
+                    height: 100,
+                  ),
+                  SizedBox(
+                    height: 300,
+                    child: ListView.builder(
+                      padding: const EdgeInsets.all(8),
+                      itemCount: exercisesByName.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          height: 50,
+                          margin: const EdgeInsets.all(2),
+                          child: Center(
+                            child: Text(
+                              '[${exercisesByName[index].id}] ${exercisesByName[index].name} - ${exercisesByName[index].sets} sets - ${exercisesByName[index].reps} reps',
+                              style: const TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Center(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: TextField(
+                      controller: idUpdateController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Exercise id',
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: TextField(
+                      controller: nameUpdateController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Exercise Name',
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: TextField(
+                      controller: setsUpdateController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Sets',
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: TextField(
+                      controller: repsUpdateController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Reps',
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    child: const Text('Update Exercise Details'),
+                    onPressed: () {
+                      int id = int.parse(idUpdateController.text);
+                      String name = nameUpdateController.text;
+                      int sets = int.parse(setsUpdateController.text);
+                      int reps= int.parse(repsUpdateController.text);
+                      _update(id, name, sets,reps);
+                    },
+                  ),
+                ],
+              ),
+            ),
+            Center(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: TextField(
+                      controller: idDeleteController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Exercise id',
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    child: const Text('Delete'),
+                    onPressed: () {
+                      int id = int.parse(idDeleteController.text);
+                      _delete(id);
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
+
+  void _insert(name, sets,reps) async {
+    // row to insert
+    Map<String, dynamic> row = {
+      DatabaseHelper.columnName: name,
+      DatabaseHelper.columnsets: sets,
+      DatabaseHelper.columnreps: reps
+    };
+    Exercise exercise = Exercise.fromJson(row);
+    final id = await dbHelper.insert(exercise);
+    _showMessageInScaffold('inserted row id: $id');
+  }
+
+  void _queryAll() async {
+    final allRows = await dbHelper.queryAllRows();
+    exercises.clear();
+    for (var row in allRows) {
+      exercises.add(Exercise.fromJson(row));
+    }
+    _showMessageInScaffold('Query done.');
+    setState(() {});
+  }
+
+  void _query(name) async {
+    final allRows = await dbHelper.queryRows(name);
+    exercisesByName.clear();
+    for (var row in allRows) {
+      exercisesByName.add(Exercise.fromJson(row));
+    }
+  }
+
+  void _update(id, name, sets,reps) async {
+    // row to update
+    Exercise exercise = Exercise(name: name, id: id,sets:sets,reps:reps);
+    final rowsAffected = await dbHelper.update(exercise);
+    _showMessageInScaffold('updated $rowsAffected row(s)');
+  }
+
+  void _delete(id) async {
+    // Assuming that the number of rows is the id for the last row.
+    final rowsDeleted = await dbHelper.delete(id);
+    _showMessageInScaffold('deleted $rowsDeleted row(s): row $id');
+  }
 }
+//import 'package:myapp/dbwork.dart';
 
-class Workout {
+class Exercise{
   final int? id;
-  String name;
-  String? exname;
-  int? set;
-  int? rep;
+  final String name;
+  final int sets;
+  final int reps;
 
-  Workout({this.id, required this.name, this.exname, this.set, this.rep});
+  const Exercise({this.id, required this.name, required this.sets, required this.reps});
 
-  factory Workout.fromMap(Map<String, dynamic> json) => new Workout(
-        id: json['id'],
-        name: json['workoutname'],
-        exname: json['exercisename'],
-        set: json['sets'],
-        rep: json['reps'],
-      );
+  /*factory Exercise.fromMap(Map<String, dynamic> map)=> Exercise(
+    id : map['id'],
+    name : map['name'],
+    sets : map['sets'],
+  );
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
-      'name': name,
-      'exname': exname,
-      'set': set,
-      'rep': rep,
+      DatabaseHelper.columnId: id,
+      DatabaseHelper.columnName: name,
+      DatabaseHelper.columnsets: sets,
     };
-  }
-}
+  }*/
+  Exercise copy({
+    int? id,
+    String? name,
+    int? sets,
+    int? reps,
+  }) =>
+      Exercise(
+        id: id ?? this.id,
+        name: name ?? this.name,
+        sets: sets ?? this.sets,
+        reps: reps ?? this.reps,
+      );
 
+  Exercise.fromJson(Map <String, dynamic> json):
+        id = json['id'],
+        name= json['name'],
+        sets= json['sets'],
+        reps= json['reps'];
+
+  Map<String, dynamic> toJson() => {
+    'id':id,
+    'name':name,
+    'sets':sets,
+    'reps':reps,
+  };
+}
 class DatabaseHelper {
-  DatabaseHelper._privateConstructor();
-  static final DatabaseHelper instance = DatabaseHelper._privateConstructor();
+
+  static const _databaseName = "Exercise.db";
+
+  static const table = 'Exercisetable';
+
+  static const columnId = 'id';
+  static const columnName = 'name';
+  static const columnsets = 'sets';
+  static const columnreps= 'reps';
+
+  static final DatabaseHelper instance = DatabaseHelper._init();
 
   static Database? _database;
-  Future<Database> get database async => _database ??= await _initDatabase();
 
-  Future<Database> _initDatabase() async {
-    Directory documentDirectory = await getApplicationDocumentsDirectory();
-    String path = join(await getDatabasesPath(), 'workout.db');
-    return await openDatabase(
-      path,
-      version: 1,
-      onCreate: _onCreate,
-    );
+  DatabaseHelper._init();
+
+  Future<Database> get database async {
+    if (_database != null) return _database!;
+
+    _database = await _initDB(_databaseName);
+    return _database!;
   }
 
-  Future _onCreate(Database db, int version) async {
+  Future<Database> _initDB(String filePath) async {
+    final dbPath = await getDatabasesPath();
+    final path = join(dbPath, filePath);
+
+    return await openDatabase(path, version: 1, onCreate: _createDB);
+  }
+
+  // SQL code to create the database table
+  Future _createDB(Database db, int version) async {
     await db.execute('''
-CREATE TABLE workout(
-  id INTEGAR PRIMARY KEY,
-  name TEXT
-)
-    ''');
+CREATE TABLE $table ( 
+  $columnId INTEGER PRIMARY KEY AUTOINCREMENT,
+  $columnName TEXT NOT NULL,
+  $columnsets INTEGER NOT NULL,
+  $columnreps INTEGER NOT NULL
+  )
+''');
   }
 
-  Future<List<Workout>> getWorkout() async {
+  // Helper methods
+
+  // Inserts a row in the database where each key in the Map is a column name
+  // and the value is the column value. The return value is the id of the
+  // inserted row.
+  Future<int> insert(Exercise Exercise) async {
     Database db = await instance.database;
-    var workout = await db.query('workout', orderBy: 'name');
-    List<Workout> workoutList = workout.isNotEmpty
-        ? workout.map((c) => Workout.fromMap(c)).toList()
-        : [];
-    return workoutList;
+    return await db.insert(table, {'name': Exercise.name, 'sets': Exercise.sets, 'reps':Exercise.reps});
   }
 
-  Future<int> add(Workout workout) async {
+  // All of the rows are returned as a list of maps, where each map is
+  // a key-value list of columns.
+  Future<List<Map<String, dynamic>>> queryAllRows() async {
     Database db = await instance.database;
-    return await db.insert('workout', workout.toMap());
+    return await db.query(table);
   }
 
-  Future<int> remove(int id) async {
+  // Queries rows based on the argument received
+  Future<List<Map<String, dynamic>>> queryRows(name) async {
     Database db = await instance.database;
-    return await db.delete('workout', where: 'id = ?', whereArgs: [id]);
+    return await db.query(table, where: "$columnName LIKE '%$name%'");
   }
 
-  Future<int> update(Workout workout) async {
+  // All of the methods (insert, query, update, delete) can also be done using
+  // raw SQL commands. This method uses a raw query to give the row count.
+  Future<int?> queryRowCount() async {
     Database db = await instance.database;
-    return await db.update('workout', workout.toMap(),
-        where: 'id = ?', whereArgs: [workout.id]);
+    return Sqflite.firstIntValue(await db.rawQuery('SELECT COUNT(*) FROM $table'));
+  }
+
+  // We are assuming here that the id column in the map is set. The other
+  // column values will be used to update the row.
+  Future<int> update(Exercise Exercise) async {
+    Database? db = await instance.database;
+    int id = Exercise.toJson()['id'];
+    return await db.update(table, Exercise.toJson(), where: '$columnId = ?', whereArgs: [id]);
+  }
+
+  // Deletes the row specified by the id. The number of affected rows is
+  // returned. This should be 1 as long as the row exists.
+  Future<int> delete(int id) async {
+    Database? db = await instance.database;
+    return await db.delete(table, where: '$columnId = ?', whereArgs: [id]);
   }
 }
+
+
