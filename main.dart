@@ -35,80 +35,93 @@ class Home extends StatelessWidget {
         title: const Text('Hermes Fitness'),
       ),
       body: Stack(children: [
+        Container(
+          decoration: const BoxDecoration(
+              gradient: const LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                Colors.red,
+                Colors.white,
+                Colors.white,
+                Colors.white,
+                Colors.red,
+              ])),
+        ),
         Center(
           child: Container(child: Image.asset('assets/PullUp.jpg')),
         ),
         Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  height: 50,
-                  width: 300,
-                  color: Colors.red.withOpacity(.5),
-                  child: const Text(
-                    'Welcome!',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                        color: Colors.white),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                ),
-                Container(
-                  // padding: const EdgeInsets.all(10),
-                  height: 50,
-                  width: 300,
-                  color: Colors.red.withOpacity(.5),
-                  child: TextButton(
-                      onPressed: () => {
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              height: 50,
+              width: 300,
+              color: Colors.red.withOpacity(.5),
+              child: const Text(
+                'Welcome!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                    color: Colors.white),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+            ),
+            Container(
+              // padding: const EdgeInsets.all(10),
+              height: 50,
+              width: 300,
+              color: Colors.red.withOpacity(.5),
+              child: TextButton(
+                  onPressed: () => {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (_) => const StartWorkout(),
                             ))
                       },
-                      child: const Text(
-                        "Start Workout",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 25, color: Colors.white),
-                      )),
-                )
-              ],
-            )),
+                  child: const Text(
+                    "Start Workout",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 25, color: Colors.white),
+                  )),
+            )
+          ],
+        )),
       ]),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text('Navigator', style: TextStyle(color: Colors.white)),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text('Navigator', style: TextStyle(color: Colors.white)),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -125,12 +138,25 @@ class StartWorkout extends StatelessWidget {
       ),
       body: Center(
         child: Stack(children: [
+          Container(
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
           Center(
               child: Container(
-                child: Image.asset(
-                  'assets/pushup.jpg',
-                ),
-              )),
+            child: Image.asset(
+              'assets/pushup.jpg',
+            ),
+          )),
           GridView.count(
             primary: false,
             padding: const EdgeInsets.all(5),
@@ -246,32 +272,32 @@ class StartWorkout extends StatelessWidget {
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text('Navigator', style: TextStyle(color: Colors.white)),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text('Navigator', style: TextStyle(color: Colors.white)),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -286,88 +312,113 @@ class PushPullLegs extends StatelessWidget {
         backgroundColor: Colors.red,
         title: const Text('Push Pull Legs'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
         children: [
           Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold)),
-                  child: const Text('Push'),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const Push()));
-                  })),
-          Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold)),
-                  child: const Text('Pull'),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const Pull()));
-                  })),
-          Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold)),
-                  child: const Text('Legs'),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const Legs()));
-                  })),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.red,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: const Text(
+                        'Push',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => const Push()));
+                      })),
+              Container(
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.red,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: const Text(
+                        'Pull',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => const Pull()));
+                      })),
+              Container(
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.red,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: const Text(
+                        'Legs',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => const Legs()));
+                      })),
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -382,88 +433,109 @@ class ThreeDayHybrid extends StatelessWidget {
         backgroundColor: Colors.red,
         title: const Text('Full Hybrid Workout'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
         children: [
           Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold)),
-                  child: const Text('Day One'),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const DayOne()));
-                  })),
-          Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold)),
-                  child: const Text('Day Two'),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const DayTwo()));
-                  })),
-          Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold)),
-                  child: const Text('Day Three'),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const DayThree()));
-                  })),
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red
+                ])),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.red,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: const Text('Day One',
+                          style: TextStyle(color: Colors.black)),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => const DayOne()));
+                      })),
+              Container(
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.red,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: const Text('Day Two',
+                          style: TextStyle(color: Colors.black)),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => const DayTwo()));
+                      })),
+              Container(
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.red,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: const Text('Day Three',
+                          style: TextStyle(color: Colors.black)),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const DayThree()));
+                      })),
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -478,120 +550,144 @@ class BroSplit extends StatelessWidget {
         backgroundColor: Colors.red,
         title: const Text('Bro Split'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
         children: [
           Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold)),
-                  child: const Text('Chest'),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const Chest()));
-                  })),
-          Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold)),
-                  child: const Text('Back'),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const Back()));
-                  })),
-          Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold)),
-                  child: const Text('Legs'),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const BroSplitLegs()));
-                  })),
-          Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold)),
-                  child: const Text('Shoulders'),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const Shoulders()));
-                  })),
-          Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold)),
-                  child: const Text('Arms'),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const Arms()));
-                  })),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.red,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: const Text('Chest',
+                          style: TextStyle(color: Colors.black)),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => const Chest()));
+                      })),
+              Container(
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.red,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: const Text('Back',
+                          style: TextStyle(color: Colors.black)),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => const Back()));
+                      })),
+              Container(
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.red,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: const Text('Legs',
+                          style: TextStyle(color: Colors.black)),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const BroSplitLegs()));
+                      })),
+              Container(
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.red,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: const Text('Shoulders',
+                          style: TextStyle(color: Colors.black)),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const Shoulders()));
+                      })),
+              Container(
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.red,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold)),
+                      child: const Text('Arms',
+                          style: TextStyle(color: Colors.black)),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => const Arms()));
+                      })),
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -606,107 +702,127 @@ class Calisthenics extends StatelessWidget {
         backgroundColor: Colors.red,
         title: const Text('Calisthenics'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/squat.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('DB Cross Curls')),
-                      Container(child: const Text('Dips')),
-                      Container(child: const Text('Flat Plate Curl')),
-                      Container(child: const Text('Tricept Push Down')),
-                      Container(child: const Text('BB Curl')),
-                      Container(child: const Text('Skull Crusher')),
-                    ],
-                  ),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(top: 100),
+            children: [
+              Container(child: Image.asset('assets/Cali.jpg')),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: const Text('Exercise',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('DB Cross Curls')),
+                          Container(child: const Text('Dips')),
+                          Container(child: const Text('Flat Plate Curl')),
+                          Container(child: const Text('Tricept Push Down')),
+                          Container(child: const Text('BB Curl')),
+                          Container(child: const Text('Skull Crusher')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              child: const Text('Sets',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Reps',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('Max')),
+                            Container(child: const Text('Max')),
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('Max')),
-                        Container(child: const Text('Max')),
-                      ],
-                    )),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -721,104 +837,124 @@ class Push extends StatelessWidget {
         backgroundColor: Colors.red,
         title: const Text('Push'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/push.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          Center(
+            child: ListView(
+              padding: const EdgeInsets.only(top: 100),
               children: [
+                Container(child: Image.asset('assets/push.jpg')),
                 Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                  color: Colors.red,
+                  padding: const EdgeInsets.all(20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('Flat Bench Press')),
-                      Container(child: const Text('Shoulder Press')),
-                      Container(child: const Text('Dips')),
-                      Container(child: const Text('Tricep Push Down')),
-                      Container(child: const Text('DB Lat Raise')),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                                child: const Text('Exercise',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('Flat Bench Press')),
+                            Container(child: const Text('Shoulder Press')),
+                            Container(child: const Text('Dips')),
+                            Container(child: const Text('Tricep Push Down')),
+                            Container(child: const Text('DB Lat Raise')),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Sets',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('5')),
+                            Container(child: const Text('3')),
+                            Container(child: const Text('3')),
+                            Container(child: const Text('3')),
+                            Container(child: const Text('3')),
+                          ],
+                        ),
+                      ),
+                      Container(
+                          padding: const EdgeInsets.only(right: 20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                  child: const Text('Reps',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20))),
+                              Container(padding: const EdgeInsets.all(10)),
+                              Container(child: const Text('10')),
+                              Container(child: const Text('12')),
+                              Container(child: const Text('Max')),
+                              Container(child: const Text('15')),
+                              Container(child: const Text('15')),
+                            ],
+                          )),
                     ],
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('5')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('10')),
-                        Container(child: const Text('12')),
-                        Container(child: const Text('Max')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                      ],
-                    )),
               ],
             ),
-          ),
+          )
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -833,107 +969,127 @@ class Pull extends StatelessWidget {
         backgroundColor: Colors.red,
         title: const Text('Pull'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/Pull.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('Deadlift')),
-                      Container(child: const Text('Pull Ups')),
-                      Container(child: const Text('BB Rows')),
-                      Container(child: const Text('Farmer Exerciseries')),
-                      Container(child: const Text('DB Curls')),
-                      Container(child: const Text('Face Pulls')),
-                    ],
-                  ),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(top: 100),
+            children: [
+              Container(child: Image.asset('assets/Pull.jpg')),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: const Text('Exercise',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('Deadlift')),
+                          Container(child: const Text('Pull Ups')),
+                          Container(child: const Text('BB Rows')),
+                          Container(child: const Text('Farmer Carries')),
+                          Container(child: const Text('DB Curls')),
+                          Container(child: const Text('Face Pulls')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              child: const Text('Sets',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('5')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('6')),
+                          Container(child: const Text('5')),
+                          Container(child: const Text('3')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Reps',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('5')),
+                            Container(child: const Text('Max')),
+                            Container(child: const Text('12')),
+                            Container(child: const Text('30 ft')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('5')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('6')),
-                      Container(child: const Text('5')),
-                      Container(child: const Text('3')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('5')),
-                        Container(child: const Text('Max')),
-                        Container(child: const Text('12')),
-                        Container(child: const Text('30 ft')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                      ],
-                    )),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -948,101 +1104,121 @@ class Legs extends StatelessWidget {
         backgroundColor: Colors.red,
         title: const Text('Legs'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/squat.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('Squat')),
-                      Container(child: const Text('Good Mornings')),
-                      Container(child: const Text('Single Leg Press')),
-                      Container(child: const Text('Calf Raise')),
-                    ],
-                  ),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(top: 100),
+            children: [
+              Container(child: Image.asset('assets/squat.jpg')),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: const Text('Exercise',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('Squat')),
+                          Container(child: const Text('Good Mornings')),
+                          Container(child: const Text('Single Leg Press')),
+                          Container(child: const Text('Calf Raise')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              child: const Text('Sets',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('5')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('5')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Reps',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('5')),
+                            Container(child: const Text('20')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('20')),
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('5')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('5')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('5')),
-                        Container(child: const Text('20')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('20')),
-                      ],
-                    )),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -1056,104 +1232,124 @@ class DayOne extends StatelessWidget {
         backgroundColor: Colors.red,
         title: const Text('Full Body Hybrid Day One'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/squat.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('Reverse Lunges')),
-                      Container(child: const Text('Military Press')),
-                      Container(child: const Text('DB Delt Raise')),
-                      Container(child: const Text('DB Rear Delt Raise')),
-                      Container(child: const Text('DB Shrugs')),
-                    ],
-                  ),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(top: 100),
+            children: [
+              Container(child: Image.asset('assets/shoudlerpress.jpg')),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: const Text('Exercise',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('Reverse Lunges')),
+                          Container(child: const Text('Military Press')),
+                          Container(child: const Text('DB Delt Raise')),
+                          Container(child: const Text('DB Rear Delt Raise')),
+                          Container(child: const Text('DB Shrugs')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              child: const Text('Sets',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('4')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Reps',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('12')),
+                            Container(child: const Text('12')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('4')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('12')),
-                        Container(child: const Text('12')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                      ],
-                    )),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -1167,104 +1363,124 @@ class DayTwo extends StatelessWidget {
         backgroundColor: Colors.red,
         title: const Text('Full Body Hybrid Day Two'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/squat.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('DeadLift')),
-                      Container(child: const Text('Incline Bench Press')),
-                      Container(child: const Text('Single Arm Cable Row')),
-                      Container(child: const Text('Lat Pull Down')),
-                      Container(child: const Text('DB Cross Curl')),
-                    ],
-                  ),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(top: 100),
+            children: [
+              Container(child: Image.asset('assets/squat2.jpg')),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: const Text('Exercise',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('DeadLift')),
+                          Container(child: const Text('Incline Bench Press')),
+                          Container(child: const Text('Single Arm Cable Row')),
+                          Container(child: const Text('Lat Pull Down')),
+                          Container(child: const Text('DB Cross Curl')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              child: const Text('Sets',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('5')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('4')),
+                          Container(child: const Text('4')),
+                          Container(child: const Text('3')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Reps',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('5')),
+                            Container(child: const Text('12')),
+                            Container(child: const Text('12')),
+                            Container(child: const Text('10')),
+                            Container(child: const Text('15')),
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('5')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('4')),
-                      Container(child: const Text('4')),
-                      Container(child: const Text('3')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('5')),
-                        Container(child: const Text('12')),
-                        Container(child: const Text('12')),
-                        Container(child: const Text('10')),
-                        Container(child: const Text('15')),
-                      ],
-                    )),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -1278,104 +1494,124 @@ class DayThree extends StatelessWidget {
         backgroundColor: Colors.red,
         title: const Text('Full Body Hybrid Day Three'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/squat.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('Squat')),
-                      Container(child: const Text('Flat Bench Press')),
-                      Container(child: const Text('DB Row')),
-                      Container(child: const Text('Tricept Push Down')),
-                      Container(child: const Text('Upper Chest Fly')),
-                    ],
-                  ),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(top: 100),
+            children: [
+              Container(child: Image.asset('assets/chest.jpg')),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: const Text('Exercise',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('Squat')),
+                          Container(child: const Text('Flat Bench Press')),
+                          Container(child: const Text('DB Row')),
+                          Container(child: const Text('Tricept Push Down')),
+                          Container(child: const Text('Upper Chest Fly')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              child: const Text('Sets',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('4')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Reps',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('10')),
+                            Container(child: const Text('10')),
+                            Container(child: const Text('12')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('4')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('10')),
-                        Container(child: const Text('10')),
-                        Container(child: const Text('12')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                      ],
-                    )),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -1387,103 +1623,123 @@ class Chest extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text('Full Body Hybrid Day Three'),
+        title: const Text('Chest'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/squat.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('Flat Bench Press')),
-                      Container(child: const Text('Decline Bench Press')),
-                      Container(child: const Text('DB Flys')),
-                      Container(child: const Text('Dips')),
-                    ],
-                  ),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(top: 100),
+            children: [
+              Container(child: Image.asset('assets/chestflies.jpg')),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: const Text('Exercise',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('Flat Bench Press')),
+                          Container(child: const Text('Decline Bench Press')),
+                          Container(child: const Text('DB Flys')),
+                          Container(child: const Text('Dips')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              child: const Text('Sets',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('4')),
+                          Container(child: const Text('3')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Reps',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('10')),
+                            Container(child: const Text('10')),
+                            Container(child: const Text('12')),
+                            Container(child: const Text('Max')),
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('4')),
-                      Container(child: const Text('3')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('10')),
-                        Container(child: const Text('10')),
-                        Container(child: const Text('12')),
-                        Container(child: const Text('Max')),
-                      ],
-                    )),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -1495,106 +1751,126 @@ class Back extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text('Full Body Hybrid Day Three'),
+        title: const Text('Back'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/squat.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('Seated Row')),
-                      Container(child: const Text('Pull Ups')),
-                      Container(child: const Text('Lat Pull Down')),
-                      Container(child: const Text('DB Rear Delt Fly')),
-                      Container(child: const Text('Face Pull')),
-                    ],
-                  ),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(top: 100),
+            children: [
+              Container(child: Image.asset('assets/pull2.jpg')),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: const Text('Exercise',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('Seated Row')),
+                          Container(child: const Text('Pull Ups')),
+                          Container(child: const Text('Lat Pull Down')),
+                          Container(child: const Text('DB Rear Delt Fly')),
+                          Container(child: const Text('Face Pull')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              child: const Text('Sets',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('4')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Reps',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('12')),
+                            Container(child: const Text('Max')),
+                            Container(child: const Text('12')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('4')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('12')),
-                        Container(child: const Text('Max')),
-                        Container(child: const Text('12')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                      ],
-                    )),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -1606,106 +1882,126 @@ class BroSplitLegs extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text('Full Body Hybrid Day Three'),
+        title: const Text('Legs'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/squat.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('Deadlift')),
-                      Container(child: const Text('Calf Raise')),
-                      Container(child: const Text('Pistol Squat')),
-                      Container(child: const Text('Hip Thrust')),
-                      Container(child: const Text('Hanging Knee Raise')),
-                    ],
-                  ),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(top: 100),
+            children: [
+              Container(child: Image.asset('assets/deadlift.jpg')),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: const Text('Exercise',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('Deadlift')),
+                          Container(child: const Text('Calf Raise')),
+                          Container(child: const Text('Pistol Squat')),
+                          Container(child: const Text('Hip Thrust')),
+                          Container(child: const Text('Hanging Knee Raise')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              child: const Text('Sets',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('5')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Reps',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('5')),
+                            Container(child: const Text('20')),
+                            Container(child: const Text('Max')),
+                            Container(child: const Text('10')),
+                            Container(child: const Text('Max')),
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('5')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('5')),
-                        Container(child: const Text('20')),
-                        Container(child: const Text('Max')),
-                        Container(child: const Text('10')),
-                        Container(child: const Text('Max')),
-                      ],
-                    )),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -1717,103 +2013,123 @@ class Shoulders extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text('Full Body Hybrid Day Three'),
+        title: const Text('Shoulders'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/squat.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('Shoulder Press')),
-                      Container(child: const Text('DB Delt Raise')),
-                      Container(child: const Text('DB Rear Delt Raise')),
-                      Container(child: const Text('Upright Row')),
-                    ],
-                  ),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(top: 100),
+            children: [
+              Container(child: Image.asset('assets/shoulders.jpg')),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: const Text('Exercise',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('Shoulder Press')),
+                          Container(child: const Text('DB Delt Raise')),
+                          Container(child: const Text('DB Rear Delt Raise')),
+                          Container(child: const Text('Upright Row')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              child: const Text('Sets',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('4')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Reps',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('12')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('12')),
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('4')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('12')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('12')),
-                      ],
-                    )),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -1825,109 +2141,129 @@ class Arms extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text('Full Body Hybrid Day Three'),
+        title: const Text('Arms'),
       ),
-      body: ListView(
+      body: Stack(
         children: [
-          Container(child: Image.asset('assets/squat.jpg')),
           Container(
-            color: Colors.red,
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                          child: const Text('Exercise',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('DB Cross Curls')),
-                      Container(child: const Text('Dips')),
-                      Container(child: const Text('Flat Plate Curl')),
-                      Container(child: const Text('Tricept Push Down')),
-                      Container(child: const Text('BB Curl')),
-                      Container(child: const Text('Skull Crusher')),
-                    ],
-                  ),
+            decoration: const BoxDecoration(
+                gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Colors.red,
+                  Colors.white,
+                  Colors.white,
+                  Colors.white,
+                  Colors.red,
+                ])),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(top: 100),
+            children: [
+              Container(child: Image.asset('assets/arms.jpg')),
+              Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: const Text('Exercise',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('DB Cross Curls')),
+                          Container(child: const Text('Dips')),
+                          Container(child: const Text('Flat Plate Curl')),
+                          Container(child: const Text('Tricept Push Down')),
+                          Container(child: const Text('BB Curl')),
+                          Container(child: const Text('Skull Crusher')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              child: const Text('Sets',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20))),
+                          Container(padding: const EdgeInsets.all(10)),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                          Container(child: const Text('3')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                child: const Text('Reps',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20))),
+                            Container(padding: const EdgeInsets.all(10)),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('15')),
+                            Container(child: const Text('Max')),
+                            Container(child: const Text('Max')),
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: const Text('Sets',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))),
-                      Container(padding: const EdgeInsets.all(10)),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                      Container(child: const Text('3')),
-                    ],
-                  ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            child: const Text('Reps',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20))),
-                        Container(padding: const EdgeInsets.all(10)),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('15')),
-                        Container(child: const Text('Max')),
-                        Container(child: const Text('Max')),
-                      ],
-                    )),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                child: Text(
-                  'Navigator',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              ListTile(
-                  title: const Text('Home'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Home(),
-                        ));
-                  }),
-              ListTile(
-                  title: const Text('Start Workout'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const StartWorkout(),
-                        ));
-                  }),
-            ],
-          )),
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.black),
+            child: Text(
+              'Navigator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const Home(),
+                    ));
+              }),
+          ListTile(
+              title: const Text('Start Workout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const StartWorkout(),
+                    ));
+              }),
+        ],
+      )),
     );
   }
 }
@@ -1941,7 +2277,7 @@ class WorkoutOne extends StatefulWidget {
 
 class _WorkoutOneState extends State<WorkoutOne> {
   final dbHelper = DatabaseHelper.instance;
-  List<Exercise>  exercises= [];
+  List<Exercise> exercises = [];
   List<Exercise> exercisesByName = [];
 //controllers used in insert operation UI
   TextEditingController nameController = TextEditingController();
@@ -1957,12 +2293,10 @@ class _WorkoutOneState extends State<WorkoutOne> {
 //controllers used in query operation UI
   TextEditingController queryController = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  void _showMessageInScaffold(String message){
-    _scaffoldKey.currentState?.showSnackBar(
-        SnackBar(
-          content: Text(message),
-        )
-    );
+  void _showMessageInScaffold(String message) {
+    _scaffoldKey.currentState?.showSnackBar(SnackBar(
+      content: Text(message),
+    ));
   }
 
   @override
@@ -1970,140 +2304,133 @@ class _WorkoutOneState extends State<WorkoutOne> {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
-        key: _scaffoldKey,
-        appBar: AppBar(
-          bottom: const TabBar(
-            tabs: [
-              Tab(
-                text: "Insert",
-              ),
-              Tab(
-                text: "View",
-              ),
-              Tab(
-                text: "Query",
-              ),
-              Tab(
-                text: "Update",
-              ),
-              Tab(
-                text: "Delete",
-              ),
-            ],
+          key: _scaffoldKey,
+          appBar: AppBar(
+            backgroundColor: Colors.red,
+            bottom: const TabBar(
+              indicatorWeight: 5,
+              indicatorColor: Colors.red,
+              //indicatorSize: TabBarIndicatorSize.tab,
+              indicatorPadding: const EdgeInsets.all(10),
+              tabs: [
+                Tab(
+                  text: "Insert",
+                ),
+                Tab(
+                  text: "View",
+                ),
+                Tab(
+                  text: "Query",
+                ),
+                Tab(
+                  text: "Update",
+                ),
+                Tab(
+                  text: "Delete",
+                ),
+              ],
+            ),
+            title: const Text('Free Fitness App'),
           ),
-          title: const Text('Free Fitness App'),
-        ),
-        body: TabBarView(
-          children: [
-            Center(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    child: TextField(
-                      controller: nameController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Exercise Name',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    child: TextField(
-                      controller: setsController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Sets',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    child: TextField(
-                      controller: repsController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Reps',
-                      ),
-                    ),
-                  ),
-                  ElevatedButton(
-                    child: const Text('Insert Exercise Details'),
-                    onPressed: () {
-                      String name = nameController.text;
-                      int sets = int.parse(setsController.text);
-                      int reps=int.parse(repsController.text);
-                      _insert(name, sets,reps);
-                    },
-                  ),
-                ],
+          body: Stack(
+            children: [
+              Opacity(
+                opacity: 1,
+                child: Container(
+                  decoration: const BoxDecoration(
+                      gradient: const LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                        Colors.red,
+                        Colors.white,
+                        Colors.white,
+                        Colors.red,
+                      ])),
+                ),
               ),
-            ),
-            Container(
-              child: ListView.builder(
-                padding: const EdgeInsets.all(8),
-                itemCount: exercises.length + 1,
-                itemBuilder: (BuildContext context, int index) {
-                  if (index == exercises.length) {
-                    return ElevatedButton(
-                      child: const Text('Refresh'),
-                      onPressed: () {
-                        setState(() {
-                          _queryAll();
-                        });
-                      },
-                    );
-                  }
-                  return Container(
-                    height: 40,
-                    child: Center(
-                      child: Text(
-                        '[${exercises[index].id}] ${exercises[index].name} - ${exercises[index].sets} sets - ${exercises[index].reps} reps',
-                        style: const TextStyle(fontSize: 18),
-                      ),
+/*
+Image will be added later
+              Opacity(
+                opacity: 0.5,
+                child: Center(
+                    child: Container(child: Image.asset('assets/background.jpg')),
                     ),
-                  );
-                },
               ),
-            ),
-            Center(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    child: TextField(
-                      controller: queryController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Exercise Name',
-                      ),
-                      onChanged: (text) {
-                        if (text.length >= 2) {
-                          setState(() {
-                            _query(text);
-                          });
-                        } else {
-                          setState(() {
-                            exercisesByName.clear();
-                          });
-                        }
-                      },
+*/
+              TabBarView(
+                children: [
+                  Center(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            controller: nameController,
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Exercise Name',
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            controller: setsController,
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Sets',
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            controller: repsController,
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Reps',
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          child: const Text('Insert Exercise Details'),
+                          onPressed: () {
+                            String name = nameController.text;
+                            int sets = int.parse(setsController.text);
+                            int reps = int.parse(repsController.text);
+                            _insert(name, sets, reps);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.black, // Background color
+                          ),
+                        ),
+                      ],
                     ),
-                    height: 100,
                   ),
-                  SizedBox(
-                    height: 300,
+                  Container(
                     child: ListView.builder(
                       padding: const EdgeInsets.all(8),
-                      itemCount: exercisesByName.length,
+                      itemCount: exercises.length + 1,
                       itemBuilder: (BuildContext context, int index) {
+                        if (index == exercises.length) {
+                          return ElevatedButton(
+                            child: const Text('Refresh'),
+                            onPressed: () {
+                              setState(() {
+                                _queryAll();
+                              });
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.black, // Background color
+                            ),
+                          );
+                        }
                         return Container(
-                          height: 50,
-                          margin: const EdgeInsets.all(2),
+                          height: 40,
                           child: Center(
                             child: Text(
-                              '[${exercisesByName[index].id}] ${exercisesByName[index].name} - ${exercisesByName[index].sets} sets - ${exercisesByName[index].reps} reps',
+                              '[${exercises[index].id}] ${exercises[index].name} - ${exercises[index].sets} sets - ${exercises[index].reps} reps',
                               style: const TextStyle(fontSize: 18),
                             ),
                           ),
@@ -2111,95 +2438,146 @@ class _WorkoutOneState extends State<WorkoutOne> {
                       },
                     ),
                   ),
+                  Center(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            controller: queryController,
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Exercise Name',
+                            ),
+                            onChanged: (text) {
+                              if (text.length >= 2) {
+                                setState(() {
+                                  _query(text);
+                                });
+                              } else {
+                                setState(() {
+                                  exercisesByName.clear();
+                                });
+                              }
+                            },
+                          ),
+                          height: 100,
+                        ),
+                        SizedBox(
+                          height: 300,
+                          child: ListView.builder(
+                            padding: const EdgeInsets.all(8),
+                            itemCount: exercisesByName.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Container(
+                                height: 50,
+                                margin: const EdgeInsets.all(2),
+                                child: Center(
+                                  child: Text(
+                                    '[${exercisesByName[index].id}] ${exercisesByName[index].name} - ${exercisesByName[index].sets} sets - ${exercisesByName[index].reps} reps',
+                                    style: const TextStyle(fontSize: 18),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            controller: idUpdateController,
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Exercise id',
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            controller: nameUpdateController,
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Exercise Name',
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            controller: setsUpdateController,
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Sets',
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            controller: repsUpdateController,
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Reps',
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          child: const Text('Update Exercise Details'),
+                          onPressed: () {
+                            int id = int.parse(idUpdateController.text);
+                            String name = nameUpdateController.text;
+                            int sets = int.parse(setsUpdateController.text);
+                            int reps = int.parse(repsUpdateController.text);
+                            _update(id, name, sets, reps);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.black, // Background color
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            controller: idDeleteController,
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Exercise id',
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          child: const Text('Delete'),
+                          onPressed: () {
+                            int id = int.parse(idDeleteController.text);
+                            _delete(id);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.black, // Background color
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-            ),
-            Center(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    child: TextField(
-                      controller: idUpdateController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Exercise id',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    child: TextField(
-                      controller: nameUpdateController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Exercise Name',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    child: TextField(
-                      controller: setsUpdateController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Sets',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    child: TextField(
-                      controller: repsUpdateController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Reps',
-                      ),
-                    ),
-                  ),
-                  ElevatedButton(
-                    child: const Text('Update Exercise Details'),
-                    onPressed: () {
-                      int id = int.parse(idUpdateController.text);
-                      String name = nameUpdateController.text;
-                      int sets = int.parse(setsUpdateController.text);
-                      int reps= int.parse(repsUpdateController.text);
-                      _update(id, name, sets,reps);
-                    },
-                  ),
-                ],
-              ),
-            ),
-            Center(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    child: TextField(
-                      controller: idDeleteController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Exercise id',
-                      ),
-                    ),
-                  ),
-                  ElevatedButton(
-                    child: const Text('Delete'),
-                    onPressed: () {
-                      int id = int.parse(idDeleteController.text);
-                      _delete(id);
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+            ],
+          )),
     );
   }
 
-  void _insert(name, sets,reps) async {
+  void _insert(name, sets, reps) async {
     // row to insert
     Map<String, dynamic> row = {
       DatabaseHelper.columnName: name,
@@ -2229,9 +2607,9 @@ class _WorkoutOneState extends State<WorkoutOne> {
     }
   }
 
-  void _update(id, name, sets,reps) async {
+  void _update(id, name, sets, reps) async {
     // row to update
-    Exercise exercise = Exercise(name: name, id: id,sets:sets,reps:reps);
+    Exercise exercise = Exercise(name: name, id: id, sets: sets, reps: reps);
     final rowsAffected = await dbHelper.update(exercise);
     _showMessageInScaffold('updated $rowsAffected row(s)');
   }
@@ -2244,20 +2622,20 @@ class _WorkoutOneState extends State<WorkoutOne> {
 }
 //import 'package:myapp/dbwork.dart';
 
-class Exercise{
+class Exercise {
   final int? id;
   final String name;
   final int sets;
   final int reps;
 
-  const Exercise({this.id, required this.name, required this.sets, required this.reps});
+  const Exercise(
+      {this.id, required this.name, required this.sets, required this.reps});
 
   /*factory Exercise.fromMap(Map<String, dynamic> map)=> Exercise(
     id : map['id'],
     name : map['name'],
     sets : map['sets'],
   );
-
   Map<String, dynamic> toMap() {
     return {
       DatabaseHelper.columnId: id,
@@ -2278,21 +2656,21 @@ class Exercise{
         reps: reps ?? this.reps,
       );
 
-  Exercise.fromJson(Map <String, dynamic> json):
-        id = json['id'],
-        name= json['name'],
-        sets= json['sets'],
-        reps= json['reps'];
+  Exercise.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        name = json['name'],
+        sets = json['sets'],
+        reps = json['reps'];
 
   Map<String, dynamic> toJson() => {
-    'id':id,
-    'name':name,
-    'sets':sets,
-    'reps':reps,
-  };
+        'id': id,
+        'name': name,
+        'sets': sets,
+        'reps': reps,
+      };
 }
-class DatabaseHelper {
 
+class DatabaseHelper {
   static const _databaseName = "Exercise.db";
 
   static const table = 'Exercisetable';
@@ -2300,7 +2678,7 @@ class DatabaseHelper {
   static const columnId = 'id';
   static const columnName = 'name';
   static const columnsets = 'sets';
-  static const columnreps= 'reps';
+  static const columnreps = 'reps';
 
   static final DatabaseHelper instance = DatabaseHelper._init();
 
@@ -2341,7 +2719,8 @@ CREATE TABLE $table (
   // inserted row.
   Future<int> insert(Exercise Exercise) async {
     Database db = await instance.database;
-    return await db.insert(table, {'name': Exercise.name, 'sets': Exercise.sets, 'reps':Exercise.reps});
+    return await db.insert(table,
+        {'name': Exercise.name, 'sets': Exercise.sets, 'reps': Exercise.reps});
   }
 
   // All of the rows are returned as a list of maps, where each map is
@@ -2361,7 +2740,8 @@ CREATE TABLE $table (
   // raw SQL commands. This method uses a raw query to give the row count.
   Future<int?> queryRowCount() async {
     Database db = await instance.database;
-    return Sqflite.firstIntValue(await db.rawQuery('SELECT COUNT(*) FROM $table'));
+    return Sqflite.firstIntValue(
+        await db.rawQuery('SELECT COUNT(*) FROM $table'));
   }
 
   // We are assuming here that the id column in the map is set. The other
@@ -2369,7 +2749,8 @@ CREATE TABLE $table (
   Future<int> update(Exercise Exercise) async {
     Database? db = await instance.database;
     int id = Exercise.toJson()['id'];
-    return await db.update(table, Exercise.toJson(), where: '$columnId = ?', whereArgs: [id]);
+    return await db.update(table, Exercise.toJson(),
+        where: '$columnId = ?', whereArgs: [id]);
   }
 
   // Deletes the row specified by the id. The number of affected rows is
@@ -2379,5 +2760,3 @@ CREATE TABLE $table (
     return await db.delete(table, where: '$columnId = ?', whereArgs: [id]);
   }
 }
-
-
