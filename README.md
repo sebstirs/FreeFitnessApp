@@ -4,6 +4,8 @@ Fitness apps are over abundant in the app store this makes it hard to find fitne
 
 
 Setup
-Visit the Flutter download page to install Flutter to your computer. https://docs.flutter.dev/get-started/install 
-Once flutter is installed create a new project titled FreeFitnessApp. Copy the main.dart file under the /lib folder. 
-Download the /assests folder in the /FreeFtinessApp folder.
+Install Flutter via https://docs.flutter.dev/get-started/install 
+Install sqflite package via https://pub.dev/packages/sqflite
+Install the path provider package via https://pub.dev/packages/path_provider
+Once flutter is installed create a new project titled FreeFitnessApp. Copy the main.dart file to the /lib folder. Copy the dependencys and assets in the pubspec.yaml file under the FreeFitnessApp folder.
+Download the /assests folder in the /FreeFtinessApp folder (This will enable the pictures in the app, otherwise it will show an error message of file not found)
